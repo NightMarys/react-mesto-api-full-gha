@@ -1,0 +1,20 @@
+.profile__title {
+    grid-area: title;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 114%;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 700px) {
+    .profile__title {
+        font-size: 27px;
+        padding-left: 18px;
+    }
+}
