@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.119.241
 
-Frontend https://...
+Frontend https://eto.mesto.tut.nomoredomainsrocks.ru
 
-Backend https://...
+Backend hhttps://api.eto.mesto.tut.nomoredomainsrocks.ru
