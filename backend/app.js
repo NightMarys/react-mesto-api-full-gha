@@ -1,5 +1,5 @@
 const express = require('express');
-
+const path = require('path');
 const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
@@ -24,11 +24,7 @@ app.use(requestLogger);
 
 app.use(cors);
 
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/signup', celebrate({
   body: Joi.object().keys({
