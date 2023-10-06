@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.119.241
+IP 158.160.119.241
 
 Frontend https://eto.mesto.tut.nomoredomainsrocks.ru
 
