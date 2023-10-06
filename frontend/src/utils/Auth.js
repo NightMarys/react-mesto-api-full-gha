@@ -1,4 +1,4 @@
-const BASE_URL = "http://api.eto.mesto.tut.nomoredomainsrocks.ru/";
+const BASE_URL = "http://localhost:3000";
 
 function checkError(res) {
   if (res.ok) {
@@ -28,7 +28,8 @@ export const login = (password, email) => {
   }).then(checkError);
 };
 
-export const getToken = (token) => {
+export const getToken = () => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {

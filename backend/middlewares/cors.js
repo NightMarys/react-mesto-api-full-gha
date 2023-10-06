@@ -1,6 +1,10 @@
 const allowedCors = [
   'http://localhost:3000',
+  'http://localhost:3001',
+  'https://localhost:3000',
+  'https://localhost:3001',
   'http://eto.mesto.tut.nomoredomainsrocks.ru/',
+  'https://eto.mesto.tut.nomoredomainsrocks.ru/',
 ];
 
 module.exports = (req, res, next) => {
@@ -8,7 +12,7 @@ module.exports = (req, res, next) => {
 
   const { origin } = req.headers;
   if (allowedCors.includes(origin)) {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', origin);
   }
 
   if (req.method === 'OPTIONS') {
