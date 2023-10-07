@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const path = require('path');
 const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
@@ -25,8 +24,6 @@ app.use(requestLogger);
 
 app.use(cors);
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.post('/signup', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
@@ -49,8 +46,8 @@ app.use(auth);
 app.use('/', require('./routes/cards'));
 app.use('/', require('./routes/users'));
 
-app.use('/*', () => {
-  throw new NotFoundError('Страница не найдена');
+app.use('/*', (req, res, next) => {
+  next(new NotFoundError('Страница не найдена'));
 });
 
 app.use(errorLogger);
