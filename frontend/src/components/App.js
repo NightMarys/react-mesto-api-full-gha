@@ -44,6 +44,8 @@ function App() {
   const [userEmail, setUserEmail] = React.useState("");
   const [userPass, setUserPass] = React.useState("");
 
+  const navigate = useNavigate();
+
   React.useEffect(() => {
     api
       .getUserInfo()
@@ -65,8 +67,6 @@ function App() {
         console.log(err);
       });
   }, []);
-
-  const navigate = useNavigate();
 
   React.useEffect(() => {
     handleTokenCheck();
