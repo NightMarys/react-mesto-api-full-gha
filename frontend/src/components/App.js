@@ -47,7 +47,8 @@ function App() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    api
+    if (loggedIn) {
+      api
       .getUserInfo()
       .then((data) => {
         setCurrentUser(data);
@@ -55,10 +56,12 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+    }
+  }, [loggedIn]);
 
   React.useEffect(() => {
-    api
+    if (loggedIn) {
+      api
       .getInitialCards()
       .then((serverCards) => {
         setCards(serverCards);
@@ -66,13 +69,10 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+    }
+  }, [loggedIn]);
 
   React.useEffect(() => {
-    handleTokenCheck();
-  }, []);
-
-  const handleTokenCheck = () => {
     const token = localStorage.getItem("jwt");
     if (token) {
       auth
@@ -93,13 +93,14 @@ function App() {
           }
         });
     }
-  };
+  }, [navigate, loggedIn]);
+
 
   function handleLogIn(email, password) {
     auth
       .login(email, password)
-      .then((data) => {
-        localStorage.setItem("jwt", data.token);
+      .then((res) => {
+        localStorage.setItem("jwt", res.token);
         setUserEmail(email);
         setLoggedIn(true);
         navigate("/");

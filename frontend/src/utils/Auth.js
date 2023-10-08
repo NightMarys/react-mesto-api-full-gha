@@ -1,4 +1,4 @@
-const BASE_URL = "https://eto.mesto.tut.nomoredomainsrocks.ru/signup";
+const BASE_URL = "https://eto.mesto.tut.nomoredomainsrocks.ru";
 
 function checkError(res) {
   if (res.ok) {
@@ -8,23 +8,23 @@ function checkError(res) {
   }
 }
 
-export const register = (password, email) => {
+export const register = (data) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ password, email }),
+    body: JSON.stringify(data),
   }).then(checkError);
 };
 
-export const login = (password, email) => {
+export const login = (data) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ password, email }),
+    body: JSON.stringify(data),
   }).then(checkError);
 };
 

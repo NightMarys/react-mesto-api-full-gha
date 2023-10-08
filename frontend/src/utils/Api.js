@@ -86,7 +86,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "https://eto.mesto.tut.nomoredomainsrocks.ru/signup",
+  baseUrl: "https://eto.mesto.tut.nomoredomainsrocks.ru",
   headers: {
     "Content-Type": "application/json",
   },
