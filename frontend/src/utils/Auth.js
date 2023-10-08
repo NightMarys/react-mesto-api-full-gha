@@ -1,4 +1,4 @@
-const BASE_URL = "https://eto.mesto.tut.nomoredomainsrocks.ru";
+const BASE_URL = "https://api.eto.mesto.tut.nomoredomainsrocks.ru";
 
 function checkError(res) {
   if (res.ok) {

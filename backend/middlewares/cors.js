@@ -1,6 +1,8 @@
 const allowedCors = [
   'http://eto.mesto.tut.nomoredomainsrocks.ru/',
   'https://eto.mesto.tut.nomoredomainsrocks.ru/',
+  'http://api.eto.mesto.tut.nomoredomainsrocks.ru/',
+  'https://api.eto.mesto.tut.nomoredomainsrocks.ru/',
 ];
 
 module.exports = (req, res, next) => {
